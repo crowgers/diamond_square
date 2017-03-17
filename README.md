@@ -34,7 +34,6 @@ N,W,S,E are computed using surrounding reference points. NN, WW, EE, SS are poin
 TODO-
 Add a smoothing function as 3D plot looks aweful.
 ![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare3D.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare3D-2.png)
 
 Code is sufficiently small to leave in one file although could potentially split functions into a methods file and have a short ~10-15 line main file which loads them as needed.
 
