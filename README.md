@@ -3,8 +3,8 @@
 Implementation of Diamond Square algorithm.  Used Matplotlib version 1.5.3 and Numpy version 1.11.2.
 IDE: Jetbrains Pycharm Community edition. Link: https://www.jetbrains.com/pycharm/download/#section=windows
 
-Input values are the G_SIZE which defines grid size according to (2^G_SIZE + 1) & G_MAX_RND for minimum and maximum random number.
-G_SIZE serves as a measure of level which is looped 0 -> G_SIZE.  where 0 starts with large shapes and G_SIZE represents smallest shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
+Input values are the G_SIZE which defines grid length according to (2^G_SIZE + 1) & G_MAX_RND for minimum and maximum random number.
+G_SIZE also serves as a measure of level which is looped 0 -> G_SIZE.  Where 0 represents large shapes and G_SIZE represents small shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
 
 ![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/Diamond_Square Algorithm.png)
 
