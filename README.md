@@ -11,7 +11,7 @@ G_SIZE also serves as a measure of level which is looped 0 -> G_SIZE.  Where 0 r
 The function _rnjesus takes single input value N and gerenates a random value between -N -> +N.
 
 The grid is seeded with 4 random values in range -G_MAX_RND -> +G_MAX_RND.
-Each point is computed by taking the average and adding a random number to it. This random number is reduced at each level (see above) according to G_SIZE/(level+1).  This is a crude impimentation but allows for sufficently random terrain & sufficient smoothness.
+Each point is computed by taking the average and adding a random number to it. This random number is reduced at each level (see above) according to G_SIZE/(level+1).  This is a crude implementation but allows for sufficently random terrain & sufficient smoothness.
 
 Square step (so called as reference points form a square) is computed simply.
 C is the computed point using marked points below.
@@ -20,8 +20,8 @@ C is the computed point using marked points below.
             C
       SW          SE
 
-Diamond step (so called a reference points form a diamond) requires a wrapping if the index are minimum and maximum values.
-The loop also has some redundancies as two points will be looked at twice however once a point has been assigned a value it will not be recomputed.
+Diamond step (so called as reference points form a diamond) requires a wrapping if the index is at minimum and maximum grid values.
+The loop also has some redundancies as some points will be looked at twice however once a point has been assigned a non-zero value it will not be recomputed.
 
 N,W,S,E are computed using surrounding reference points. NN, WW, EE, SS are points which wrap if outside index range.
 
