@@ -6,7 +6,7 @@ IDE: Jetbrains Pycharm Community edition. Link: https://www.jetbrains.com/pychar
 Input values are the G_SIZE which defines grid length according to (2^G_SIZE + 1) & G_MAX_RND for minimum and maximum random number.
 G_SIZE also serves as a measure of level which is looped 0 -> G_SIZE.  Where 0 represents large shapes and G_SIZE represents small shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
 
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/Diamond_Square Algorithm.png)
+![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/Diamond_Square_Algorithm.png)
 
 The function _rnjesus takes single input value N and gerenates a random value between -N -> +N.
 
