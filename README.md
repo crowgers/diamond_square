@@ -3,15 +3,15 @@
 Implementation of Diamond Square algorithm.  Used Matplotlib version 1.5.3 and Numpy version 1.11.2.
 IDE: Jetbrains Pycharm Community edition. Link: https://www.jetbrains.com/pycharm/download/#section=windows
 
-Input values are the G_SIZE which defines grid length according to (2^G_SIZE + 1) & G_MAX_RND for minimum and maximum random number.
-G_SIZE also serves as a measure of level which is looped 0 -> G_SIZE.  Where 0 represents large shapes and G_SIZE represents small shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
+Input values are the ds_steps which defines grid length according to (2^ds_steps + 1) & max_rnd for minimum and maximum random number.
+ds_steps also serves as a measure of level which is looped 0 -> ds_steps.  Where 0 represents large shapes and ds_steps represents small shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
 
 ![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/Diamond_Square_Algorithm.png)
 
 The function _rnjesus takes single input value N and gerenates a random value between -N -> +N.
 
-The grid is seeded with 4 random values in range -G_MAX_RND -> +G_MAX_RND.
-Each point is computed by taking the average and adding a random number to it. This random number is reduced at each level (see above) according to G_SIZE/(level+1).  This is a crude implementation but allows for sufficently random terrain & sufficient smoothness.
+The grid is seeded with 4 random values in range -max_rnd -> +max_rnd.
+Each point is computed by taking the average and adding a random number to it. This random number is reduced at each level (see above) according to ds_steps/(level+1).  This is a crude implementation but allows for sufficiently random terrain & sufficient smoothness.
 
 Square step (so called as reference points form a square) is computed simply.
 C is the computed point using marked points below.
@@ -33,6 +33,9 @@ N,W,S,E are computed using surrounding reference points. NN, WW, EE, SS are poin
 
 TODO-
 Add a smoothing function as 3D plot looks aweful.
+Rename some variables to be more obvious
+Reduce number of input arguments to some functions for clarity.
+Add in function to take user input.  
 ![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare3D.png)
 ![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare3D-2.png)
 
