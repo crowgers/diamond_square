@@ -61,7 +61,7 @@ def f_plotting(height_map):
         p3.set_title("Diamond Square 2D Terrain Heatmap")
         p3.set_aspect("equal")
         plt.imshow(height_map, origin="lower", cmap=cm.jet)
-        plt.savefig("3D_dS_image%s.png" % timestr, bbox_inches="tight")
+        plt.savefig("2D_dS_image%s.png" % timestr, bbox_inches="tight")
         plt.show()
 
 
