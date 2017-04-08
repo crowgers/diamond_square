@@ -14,12 +14,12 @@ import time
 
 
 def f_avg(*args):
-    """Takes in Arbitray arguments and computes their average."""
+    """Takes in arbitray arguments and computes their average."""
     return float(sum(args)) / float(len(args))
 
 
 def f_rnjesus(rand):
-    """Returns uniformly distributed presudo-random value in +/- rand_max."""
+    """Returns uniformly distributed presudo-random value between +/- rand."""
     return random.uniform(-rand, rand)
 
 
@@ -160,8 +160,8 @@ def f_dsmain(height_map, steps):
 
 
 # Starts here. Recommend 3 up to 8 for 2d and 3 - 5 for 3d.
-ds_steps = 8  # Number of levels. Max index = (2^ds_steps)+1. 
+ds_steps = 8  # Number of levels. Max index = (2^ds_steps)+1.
 max_rnd = 1.0  # Min & Max random value.
 seeded_map = f_seed_grid(2**ds_steps + 1, max_rnd)
 Final_height_map = f_dsmain(seeded_map, ds_steps) # Calculations.
-f_plotting(Final_height_map)  # Plotting.
+f_plotting(Final_height_map)  # Plotting
