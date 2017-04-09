@@ -154,11 +154,12 @@ def f_dsmain(height_map, steps, max_index):
     return height_map
 
 
-# Starts here. Recommend 3 up to 8 for 2d and 3 - 5 for 3d.
-ds_steps = 5  # Number of levels. Max index = (2^ds_steps)+1.
+# Inputs here. Recommend ds_steps = 3 up to 11 for 2d and 3 - 5 for 3d.
+ds_steps = 5  # Number of levels. Grid points = ((ds_steps^2)+1)^2.
 max_rnd = 1.0  # Min & Max random value.
-plot_type = "3d"  # "3d" for 3d
+plot_type = "3d"  # "3d" for 3d.  Makes 2d plot for any other input.
+# Inputs end. 
 max_index = 2 ** ds_steps
 seeded_map = f_seed_grid(2**ds_steps + 1, max_rnd)
 Final_height_map = f_dsmain(seeded_map, ds_steps, max_index) # Calculations.
-f_plotting(Final_height_map, max_index, plot_type)  # Plotting
+f_plotting(Final_height_map, max_index, plot_type)  # Plotting.
