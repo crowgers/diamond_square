@@ -22,8 +22,8 @@ def f_rnjesus(rand):
     """Returns uniformly distributed presudo-random value between +/- rand."""
     return random.uniform(-rand, rand)
 
-def f_gauss_rnjesus(rand):
-    return random.gauss(0, rand/2)
+def f_rngauss(rand):  # Incomplete.  Experimenting with.
+    return random.gauss(0, 2*rand/5)
 
 
 def f_seed_grid(grid_size, max_rnd):
