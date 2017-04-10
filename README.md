@@ -1,7 +1,7 @@
 # Diamond_Square
 
 Implementation of Diamond Square algorithm.  Used Matplotlib version 1.5.3 and Numpy version 1.11.2.
-Editor:Atom.io Link:https://atom.io/ 
+Editor:Atom.io Link: https://atom.io/ 
 Terminal: Powershell(don't judge me).
 
 Input values are the ds_steps which defines grid length according to (2^ds_steps + 1) & max_rnd for minimum and maximum random number.
