@@ -1,7 +1,8 @@
 # Diamond_Square
 
 Implementation of Diamond Square algorithm.  Used Matplotlib version 1.5.3 and Numpy version 1.11.2.
-IDE: Jetbrains Pycharm Community edition. Link: https://www.jetbrains.com/pycharm/download/#section=windows
+Editor:Atom.io Link:https://atom.io/ 
+Terminal: Powershell(don't judge me).
 
 Input values are the ds_steps which defines grid length according to (2^ds_steps + 1) & max_rnd for minimum and maximum random number.
 ds_steps also serves as a measure of level which is looped 0 -> ds_steps.  Where 0 represents large shapes and ds_steps represents small shapes according to below image. Source: https://en.wikipedia.org/wiki/Diamond-square_algorithm.
@@ -12,6 +13,7 @@ The function _rnjesus takes single input value N and gerenates a random value be
 
 The grid is seeded with 4 random values in range -max_rnd -> +max_rnd.
 Each point is computed by taking the average and adding a random number to it. This random number is reduced at each level (see above) according to ds_steps/(level+1).  This is a crude implementation but allows for sufficiently random terrain & sufficient smoothness.
+Experiementing with gaussian random numbers and other such methods to get a better smoothing. 
 
 Square step (so called as reference points form a square) is computed simply.
 C is the computed point using marked points below.
