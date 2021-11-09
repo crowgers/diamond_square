@@ -15,6 +15,6 @@ if __name__ == "__main__":
     plot_type = "3d"  # "3d" for 3d.  Makes 2d plot for any other input.
     # Inputs end.
     max_index = 2 ** ds_steps
-    seeded_map = f_seed_grid(2**ds_steps + 1, max_rnd)
+    seeded_map = f_seed_grid(2**ds_steps + 1)
     Final_height_map = f_dsmain(seeded_map, ds_steps, max_index, max_rnd)  # Calcs.
     f_plotting(Final_height_map, max_index, plot_type)  # Plotting.

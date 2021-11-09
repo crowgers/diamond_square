@@ -1,5 +1,4 @@
 # Standard Library Imports
-import random
 import time
 
 # Third Party Imports
@@ -8,27 +7,21 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
 
+# First Party imports
+from diamond_square.tools import get_average_of, get_random_float
+from diamond_square.config import config
 
-def f_avg(*args):
-    """Takes in arbitray arguments and computes their average."""
-    return float(sum(args)) / float(len(args))
-
-
-def f_rnjesus(rand):
-    """Returns uniformly distributed presudo-random value between +/- rand."""
-    return random.uniform(-rand, rand)
-
-def f_rngauss(rand):  # Incomplete.  Experimenting with.
-    return random.gauss(0, 2*rand/5)
+MIN_HEIGHT = config.MIN_HEIGHT
+MAX_HEIGHT = config.MAX_HEIGHT
 
 
-def f_seed_grid(grid_size, max_rnd):
+def f_seed_grid(grid_size):
     """Initialisation function. Creates and seeds 4 corners of grid."""
     height_map = np.zeros((grid_size, grid_size), dtype=float)
-    height_map[0, 0] = f_rnjesus(max_rnd)
-    height_map[0, grid_size - 1] = f_rnjesus(max_rnd)
-    height_map[grid_size - 1, 0] = f_rnjesus(max_rnd)
-    height_map[grid_size - 1, grid_size - 1] = f_rnjesus(max_rnd)
+    height_map[0, 0] = get_random_float(MIN_HEIGHT, MAX_HEIGHT)
+    height_map[0, grid_size - 1] = get_random_float(MIN_HEIGHT, MAX_HEIGHT)
+    height_map[grid_size - 1, 0] = get_random_float(MIN_HEIGHT, MAX_HEIGHT)
+    height_map[grid_size - 1, grid_size - 1] = get_random_float(MIN_HEIGHT, MAX_HEIGHT)
     return height_map
 
 
@@ -74,8 +67,9 @@ def f_square_step(height_map, grid_split, shape_length, lo_rnd):
             north_east = height_map[i_min, j_max]
             south_west = height_map[i_max, j_min]
             south_east = height_map[i_max, j_max]
-            height_map[i_mid, j_mid] = f_avg(north_west, north_east, \
-            south_east, south_west) + f_rnjesus(lo_rnd)
+            height_map[i_mid, j_mid] = get_average_of(
+                [north_west, north_east, south_east, south_west]
+            ) + get_random_float(-lo_rnd, lo_rnd)
     return height_map
 
 
@@ -104,8 +98,9 @@ def f_diamond_step(height_map, grid_split, shape_length, lo_rnd, max_index):
                 temp = i_min - half_v_grid_size
             # If Top value exists then skip else compute.
             if height_map[i_min, j_mid] == 0:
-                height_map[i_min, j_mid] = f_avg(center, north_west, \
-                north_east, height_map[temp, j_mid]) + f_rnjesus(lo_rnd)
+                height_map[i_min, j_mid] = get_average_of(
+                    [center, north_west, north_east, height_map[temp, j_mid]]
+                ) + get_random_float(-lo_rnd, lo_rnd)
 
             # Left Diamond - wraps if at edge.
             if j_min == 0:
@@ -114,24 +109,27 @@ def f_diamond_step(height_map, grid_split, shape_length, lo_rnd, max_index):
                 temp = j_min - half_v_grid_size
             # If Left value exists then skip else compute.
             if height_map[i_mid, j_min] == 0:
-                height_map[i_mid, j_min] = f_avg(center, north_west, \
-                south_west, height_map[i_mid, temp]) + f_rnjesus(lo_rnd)
+                height_map[i_mid, j_min] = get_average_of(
+                    [center, north_west, south_west, height_map[i_mid, temp]]
+                ) + get_random_float(-lo_rnd, lo_rnd)
 
             # Right Diamond - wraps if at edge.
             if j_max == max_index:
                 temp = 0 + half_v_grid_size
             else:
                 temp = j_max + half_v_grid_size
-            height_map[i_mid, j_max] = f_avg(center, north_east, south_east, \
-            height_map[i_mid, temp]) + f_rnjesus(lo_rnd)
+            height_map[i_mid, j_max] = get_average_of(
+                [center, north_east, south_east, height_map[i_mid, temp]]
+            ) + get_random_float(-lo_rnd, lo_rnd)
 
             # Bottom Diamond - wraps at edge.
             if i_max == max_index:
                 temp = 0 + half_v_grid_size
             else:
                 temp = i_max + half_v_grid_size
-            height_map[i_max, j_mid] = f_avg(center, south_west, south_east, \
-            height_map[temp, j_mid]) + f_rnjesus(lo_rnd)
+            height_map[i_max, j_mid] = get_average_of(
+                [center, south_west, south_east, height_map[temp, j_mid]]
+            ) + get_random_float(-lo_rnd, lo_rnd)
     return height_map
 
 
