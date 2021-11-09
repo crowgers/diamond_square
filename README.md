@@ -15,7 +15,7 @@ Running `make run` will run the code.
 
 
 ### <a id="Overview"></a> Overview ###
-![Steps](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/Diamond_Square_Algorithm.png)
+![Steps](images/Diamond_Square_Algorithm.png)
 
 ### Initial Conditions
 Input values are the G_SIZE which defines grid size according to (2^G_SIZE + 1) & G_MAX_RND for minimum and maximum random number.
@@ -57,12 +57,12 @@ N,W,S,E are computed using surrounding reference points. NN, WW, EE, SS are poin
 ## Sample images
 
 ### Three Dimensional
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare3D.png)
+![](images/DiamondSquare3D.png)
 
 ### Two Dimensional
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_262k.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_262k-1.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_1M.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_1M-1.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_1M-2.png)
-![](https://raw.githubusercontent.com/crowgers/Diamond_Square/master/Images/DiamondSquare_Noisy.png)
+![](images/DiamondSquare_262k.png)
+![](images/DiamondSquare_262k-1.png)
+![](images/DiamondSquare_1M.png)
+![](images/DiamondSquare_1M-1.png)
+![](images/DiamondSquare_1M-2.png)
+![](images/DiamondSquare_Noisy.png)
