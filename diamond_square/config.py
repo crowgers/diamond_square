@@ -12,5 +12,6 @@ class _Config:
     # Composite Variable
     GRID_SIZE: int = 2 ** STEPS
 
+
 # Effectively a singleton
 config = _Config()
