@@ -1,9 +1,12 @@
+# Standard Library Imports
+import random
+import time
+
+# Third Party Imports
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
-import random
-import time
 
 
 def f_avg(*args):
@@ -40,7 +43,7 @@ def f_plotting(height_map, max_index, plot_type):
         fig = plt.figure()
         p2 = fig.add_subplot(111, projection="3d")
         p2.set_title("Diamond Square 3D Surface Plot")
-        p2.set_aspect("equal")
+        p2.set_aspect("auto")
         p2.plot_surface(x_vals, y_vals, height_map, rstride=1, cstride=1, cmap=cm.jet)
         plt.savefig("3D_dS%s.png" % timestr, bbox_inches="tight")
         plt.show()
